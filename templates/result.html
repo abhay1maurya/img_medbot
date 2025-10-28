@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedVision Chatbot - Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .analysis-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        .disclaimer-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-stethoscope me-2"></i>
+                MedVision Chatbot
+            </a>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Header -->
+                <div class="text-center mb-5">
+                    <i class="fas fa-chart-line text-primary fa-3x mb-3"></i>
+                    <h1 class="display-5 fw-bold">Analysis Results</h1>
+                    <p class="lead">Based on your uploaded image and responses</p>
+                </div>
+
+                <!-- Analysis Result -->
+                <div class="analysis-box">
+                    <h3 class="mb-4 text-primary">
+                        <i class="fas fa-microscope me-2"></i>AI Analysis
+                    </h3>
+                    <div class="analysis-content fs-5">
+                        {{ result|replace('\n', '<br>')|safe }}
+                    </div>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="disclaimer-box">
+                    <h4 class="text-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>Important Disclaimer
+                    </h4>
+                    <p class="mb-0 fs-5">
+                        ⚠️ This analysis is for informational and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition. Never disregard professional medical advice or delay in seeking it because of something you have read in this analysis.
+                    </p>
+                </div>
+
+                <!-- Actions -->
+                <div class="text-center mt-5">
+                    <div class="d-grid gap-3 d-md-flex justify-content-center">
+                        <a href="/restart" class="btn btn-primary btn-lg px-5">
+                            <i class="fas fa-redo me-2"></i>New Analysis
+                        </a>
+                        <a href="/" class="btn btn-outline-secondary btn-lg px-5">
+                            <i class="fas fa-home me-2"></i>Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1">&copy; 2024 MedVision Chatbot. For educational purposes only.</p>
+            <small class="text-light">This tool uses AI and should not replace professional medical consultation.</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
