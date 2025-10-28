@@ -1,228 +1,222 @@
-**MedVision Chatbot**
+# 🩺 MedVision Chatbot
 
-https://img.shields.io/badge/Python-3.12-blue https://img.shields.io/badge/Flask-2.3.3-lightgrey https://img.shields.io/badge/AI--Powered-Google%2520Gemini-orange https://img.shields.io/badge/Status-Functional-brightgreen
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Flask](https://img.shields.io/badge/Flask-2.3.3-lightgrey)
+![AI-Powered](https://img.shields.io/badge/AI--Powered-Google%20Gemini-orange)
+![Status](https://img.shields.io/badge/Status-Functional-brightgreen)
 
-An AI-powered medical image analysis chatbot that provides preliminary insights for educational purposes using Google Gemini's vision capabilities. Built with Flask and Python 3.12.
+An **AI-powered medical image analysis chatbot** that provides **preliminary insights for educational purposes** using **Google Gemini’s vision capabilities**.  
+Built with **Flask** and **Python 3.12**.
 
-🚀 Features
-Medical Image Analysis: Upload prescriptions, skin conditions, X-rays, medical reports
+---
 
-Contextual Question Flow: Sequential medical questions for better analysis
+## 🚀 Features
 
-AI-Powered Insights: Uses Google Gemini 1.5 Flash Vision model
+- **Medical Image Analysis:** Upload prescriptions, skin conditions, X-rays, or reports  
+- **Contextual Question Flow:** Sequential medical questions for better insights  
+- **AI-Powered Insights:** Google Gemini 1.5 Flash Vision model  
+- **Secure Session Management:** File-based storage  
+- **Responsive UI:** Bootstrap-based clean interface  
+- **Multi-format Support:** JPG, PNG, JPEG image formats  
 
-Secure Session Management: File-based session storage
+---
 
-Simple & Clean UI: Bootstrap-based responsive interface
+## ⚠️ Important Disclaimer
 
-Multi-format Support: JPG, PNG, JPEG image formats
+> 🚨 **MEDICAL DISCLAIMER:**  
+> This application is for **EDUCATIONAL and INFORMATIONAL purposes only**.  
+> It is **NOT a substitute for professional medical advice, diagnosis, or treatment**.  
+> Always seek the advice of qualified healthcare providers for medical concerns.  
+> The developers are not medical professionals — this tool should **not** be used for real medical decision-making.
 
-⚠️ Important Disclaimer
-🚨 MEDICAL DISCLAIMER: This application is for EDUCATIONAL and INFORMATIONAL purposes ONLY. It is NOT a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of qualified healthcare providers with any medical questions. Never disregard professional medical advice because of information provided by this AI system. The developers are not medical professionals and this tool should not be used for medical decision-making.
+---
 
-📋 Prerequisites
-Python 3.12 (tested and optimized)
+## 📋 Prerequisites
 
-Google Gemini API key (Get it here)
+- **Python 3.12** (tested and optimized)  
+- **Google Gemini API Key** – [Get it here](https://makersuite.google.com/app/apikey)  
+- **Internet connection** for AI access  
 
-Internet connection (for AI model access)
+---
 
-🛠️ Installation & Setup
-1. Clone or Download the Project
-bash
+## 🛠️ Installation & Setup
+
+### 1️⃣ Clone or Download the Project
+```bash
 # Create project directory
 mkdir MedVisionChatbot
 cd MedVisionChatbot
-2. Set Up Virtual Environment (Recommended)
+2️⃣ Set Up Virtual Environment
 bash
+Copy code
 # Create virtual environment
 python -m venv venv
 
-# Activate virtual environment
-# On Windows:
+# Activate environment
+# Windows
 venv\Scripts\activate
-# On macOS/Linux:
+# macOS/Linux
 source venv/bin/activate
-3. Install Dependencies
+3️⃣ Install Dependencies
 bash
+Copy code
 pip install -r requirements.txt
-4. Configure Environment
-Create a .env file in the project root:
+4️⃣ Configure Environment
+Create a .env file in your project root:
 
 env
+Copy code
 GEMINI_API_KEY=your_actual_gemini_api_key_here
 SECRET_KEY=your_secret_key_here
-Getting Google Gemini API Key:
+Getting the Google Gemini API key:
+
 Visit Google AI Studio
 
 Sign in with your Google account
 
 Create a new API key
 
-Copy the key to your .env file
+Copy it to your .env file
 
-🏃‍♂️ Running the Application
+🏃 Running the Application
 bash
+Copy code
 python app.py
-The application will start at: http://localhost:5000
+Access it at 👉 http://localhost:5000
 
 📁 Project Structure
-text
+bash
+Copy code
 MedVisionChatbot/
 │
-├── app.py                 # Main Flask application
-├── file_storage.py        # File-based session management
-├── .env                  # Environment variables (create this)
-├── requirements.txt      # Python dependencies
-├── .gitignore           # Git ignore rules
-├── README.md            # This file
+├── app.py                # Main Flask app
+├── file_storage.py       # File-based session management
+├── .env                  # Environment variables
+├── requirements.txt      # Dependencies
+├── .gitignore
+├── README.md
 │
-└── templates/           # HTML templates
-    ├── index.html      # Home page with image upload
-    ├── chat.html       # Medical questions interface
-    └── result.html     # Analysis results display
+└── templates/
+    ├── index.html        # Home page (upload)
+    ├── chat.html         # Question flow
+    └── result.html       # AI-generated results
 🔄 Workflow
-Upload Image: User uploads a medical image (skin condition, prescription, X-ray, etc.)
+Upload Image: (skin, prescription, X-ray, etc.)
 
-Answer Questions: System asks three sequential medical context questions:
+Answer Questions:
 
-"When did the problem begin?"
+When did the problem begin?
 
-"How do you feel right now?"
+How do you feel right now?
 
-"Have you taken any medicine? (Optional image upload)"
+Have you taken any medicine?
 
-AI Analysis: Gemini AI analyzes the image and context
+AI Analysis: Gemini analyzes image + context
 
-Get Results: Receive preliminary insights with proper disclaimers
+Get Results: Receive AI-generated preliminary insights with disclaimers
 
 🎯 Example Use Cases
-Dermatology: Skin rashes, acne, lesions, infections
+Dermatology: rashes, acne, infections
 
-Medical Documents: Prescriptions, lab reports, medical charts
+Medical documents: prescriptions, reports
 
-Wound Assessment: Cuts, burns, post-operative care
+Wound assessment: cuts, burns, post-surgery
 
-Educational Tool: Medical students learning diagnostic processes
+Educational use: medical students & AI demos
 
 🛡️ Security & Privacy
-Local Processing: Images processed locally before AI analysis
+Local Processing: Images handled locally before AI call
 
-File-based Sessions: No database required, sessions stored locally
+File-based Sessions: No database required
 
-Automatic Cleanup: Session files deleted after analysis
+Automatic Cleanup: Temp files auto-deleted
 
-No Permanent Storage: No medical data retained on server
+No Permanent Storage: No user data retained
 
 🐛 Troubleshooting
 Common Issues:
-"Please upload an image first" error
 
-Ensure cookies are enabled in your browser
+“Please upload an image first” → ensure cookies enabled + valid file
 
-Check that image file is valid (JPG, PNG, JPEG under 10MB)
+Gemini API error → verify .env key + internet + billing setup
 
-Gemini API errors
-
-Verify API key in .env file is correct
-
-Check internet connection
-
-Ensure billing is set up in Google AI Studio
-
-Session issues
-
-The app creates temp_sessions/ directory automatically
-
-Ensure write permissions in project directory
+Session error → check write permission in temp_sessions/
 
 Debugging:
-Check terminal output for detailed logs. The app includes comprehensive logging.
+Check terminal logs — detailed output is provided.
 
-🔧 Configuration
-Required Files:
-app.py - Main application logic
+🔧 Configuration Summary
+File	Purpose
+app.py	Main Flask logic
+file_storage.py	Session handling
+templates/	HTML templates
+.env	API keys and secrets
 
-file_storage.py - Session management
+Environment Variables
 
-templates/ - All HTML templates
+GEMINI_API_KEY → your Google Gemini key
 
-.env - Your environment variables
-
-Environment Variables:
-GEMINI_API_KEY: Your Google Gemini API key (required)
-
-SECRET_KEY: Flask secret key for session security
+SECRET_KEY → Flask secret
 
 📊 Technical Details
-Framework: Flask 2.3.3
-
-Python Version: 3.12 (optimized)
-
-AI Model: Google Gemini 1.5 Flash
-
-Session Management: Custom file-based system
-
-Image Processing: Pillow library
-
-Frontend: Bootstrap 5.3
+Component	Version / Info
+Framework	Flask 2.3.3
+Python	3.12
+AI Model	Google Gemini 1.5 Flash
+Session	File-based
+Frontend	Bootstrap 5.3
+Image Handling	Pillow
 
 🚀 Deployment Ready
-This application is production-ready with:
-
-✅ Proper error handling
-
-✅ Session management
-
-✅ Security considerations
-
-✅ Scalable architecture
-
-✅ Comprehensive logging
+✅ Error handling
+✅ Secure sessions
+✅ Logging
+✅ Scalable
+✅ Lightweight
 
 📞 Support
 If you encounter issues:
 
-Check terminal logs for detailed error messages
+Check terminal logs
 
-Verify your Gemini API key is valid and active
+Verify Gemini API key
 
-Ensure all dependencies are installed correctly
+Ensure dependencies installed
 
-Check that port 5000 is available on your system
+Make sure port 5000 is free
 
 🌟 Future Enhancements
-Potential features for expansion:
-
-User authentication system
+User authentication
 
 Medical history tracking
 
-Multiple AI model support
+Multi-model support
 
-Advanced image preprocessing
+Advanced preprocessing
 
-Export functionality for reports
+Exportable reports
 
 📄 License
-This project is intended for educational purposes. Users must ensure compliance with:
+This project is for educational use.
+Ensure compliance with:
 
-Google Gemini API terms of service
+Google Gemini API Terms of Service
 
-Medical data privacy regulations (HIPAA, GDPR, etc.)
+Data privacy laws (HIPAA, GDPR, etc.)
 
-Professional medical practice guidelines in their jurisdiction
+Local medical guidelines
 
-🏥 Medical Disclaimer (Repeated for Emphasis)
-⚠️ CRITICAL: This application provides AI-generated preliminary insights for EDUCATIONAL PURPOSES ONLY. It does NOT provide medical diagnoses, treatment recommendations, or professional healthcare advice. Always consult qualified healthcare professionals for medical concerns. The developers are not responsible for any decisions made based on this application's output.
+🏥 Medical Disclaimer (Reiterated)
+⚠️ This app provides AI-generated insights for educational purposes only.
+It is not medical advice, not diagnostic, and should never replace professional healthcare consultation.
+The developers assume no liability for any misuse.
 
-Built with ❤️ using Python 3.12, Flask, and Google Gemini AI for educational purposes
-
-🔗 Quick Start Commands
+💡 Quick Start Commands
 bash
+Copy code
 # 1. Setup
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate   # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
 # 2. Configure
@@ -234,3 +228,4 @@ python app.py
 
 # 4. Visit
 # http://localhost:5000
+Built with ❤️ using Python 3.12, Flask, and Google Gemini AI for educational purposes.
