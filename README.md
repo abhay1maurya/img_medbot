@@ -43,7 +43,7 @@ Built with **Flask** and **Python 3.12**.
 
 
 
-````markdown
+
 ## 🛠️ Installation & Setup
 
 ### 1️⃣ Create Project Directory
