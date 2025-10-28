@@ -1,4 +1,5 @@
-MedVision Chatbot
+**MedVision Chatbot**
+
 https://img.shields.io/badge/Python-3.12-blue https://img.shields.io/badge/Flask-2.3.3-lightgrey https://img.shields.io/badge/AI--Powered-Google%2520Gemini-orange https://img.shields.io/badge/Status-Functional-brightgreen
 
 An AI-powered medical image analysis chatbot that provides preliminary insights for educational purposes using Google Gemini's vision capabilities. Built with Flask and Python 3.12.
