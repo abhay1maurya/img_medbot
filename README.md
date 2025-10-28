@@ -39,54 +39,76 @@ Built with **Flask** and **Python 3.12**.
 
 ---
 
+
+
+
+
+````markdown
 ## 🛠️ Installation & Setup
 
-### 1️⃣ Clone or Download the Project
+### 1️⃣ Create Project Directory
 ```bash
 # Create project directory
 mkdir MedVisionChatbot
 cd MedVisionChatbot
-2️⃣ Set Up Virtual Environment
-bash
-Copy code
+````
+
+---
+
+### 2️⃣ Set Up Virtual Environment
+
+```bash
 # Create virtual environment
 python -m venv venv
 
 # Activate environment
-# Windows
+# On Windows:
 venv\Scripts\activate
-# macOS/Linux
+# On macOS/Linux:
 source venv/bin/activate
-3️⃣ Install Dependencies
-bash
-Copy code
-pip install -r requirements.txt
-4️⃣ Configure Environment
-Create a .env file in your project root:
+```
 
-env
-Copy code
+---
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4️⃣ Configure Environment
+
+Create a `.env` file in your project root:
+
+```env
 GEMINI_API_KEY=your_actual_gemini_api_key_here
 SECRET_KEY=your_secret_key_here
-Getting the Google Gemini API key:
+```
 
-Visit Google AI Studio
+**Getting the Google Gemini API key:**
 
-Sign in with your Google account
+1. Visit [Google AI Studio](https://makersuite.google.com/)
+2. Sign in with your Google account
+3. Create a new API key
+4. Copy it to your `.env` file
 
-Create a new API key
+---
 
-Copy it to your .env file
+## 🏃 Running the Application
 
-🏃 Running the Application
-bash
-Copy code
+```bash
 python app.py
-Access it at 👉 http://localhost:5000
+```
 
-📁 Project Structure
-bash
-Copy code
+Access it at 👉 **[http://localhost:5000](http://localhost:5000)**
+
+---
+
+## 📁 Project Structure
+
+```bash
 MedVisionChatbot/
 │
 ├── app.py                # Main Flask app
@@ -100,120 +122,136 @@ MedVisionChatbot/
     ├── index.html        # Home page (upload)
     ├── chat.html         # Question flow
     └── result.html       # AI-generated results
-🔄 Workflow
-Upload Image: (skin, prescription, X-ray, etc.)
+```
 
-Answer Questions:
+---
 
-When did the problem begin?
+## 🔄 Workflow
 
-How do you feel right now?
+1. **Upload Image:** (skin, prescription, X-ray, etc.)
+2. **Answer Questions:**
 
-Have you taken any medicine?
+   * When did the problem begin?
+   * How do you feel right now?
+   * Have you taken any medicine?
+3. **AI Analysis:** Gemini analyzes image + context
+4. **Get Results:** Receive AI-generated preliminary insights with disclaimers
 
-AI Analysis: Gemini analyzes image + context
+---
 
-Get Results: Receive AI-generated preliminary insights with disclaimers
+## 🎯 Example Use Cases
 
-🎯 Example Use Cases
-Dermatology: rashes, acne, infections
+* Dermatology: rashes, acne, infections
+* Medical documents: prescriptions, reports
+* Wound assessment: cuts, burns, post-surgery
+* Educational use: medical students & AI demos
 
-Medical documents: prescriptions, reports
+---
 
-Wound assessment: cuts, burns, post-surgery
+## 🛡️ Security & Privacy
 
-Educational use: medical students & AI demos
+* **Local Processing:** Images handled locally before AI call
+* **File-based Sessions:** No database required
+* **Automatic Cleanup:** Temp files auto-deleted
+* **No Permanent Storage:** No user data retained
 
-🛡️ Security & Privacy
-Local Processing: Images handled locally before AI call
+---
 
-File-based Sessions: No database required
+## 🐛 Troubleshooting
 
-Automatic Cleanup: Temp files auto-deleted
+**Common Issues:**
 
-No Permanent Storage: No user data retained
+* “Please upload an image first” → ensure cookies enabled + valid file
+* Gemini API error → verify `.env` key + internet + billing setup
+* Session error → check write permission in `temp_sessions/`
 
-🐛 Troubleshooting
-Common Issues:
-
-“Please upload an image first” → ensure cookies enabled + valid file
-
-Gemini API error → verify .env key + internet + billing setup
-
-Session error → check write permission in temp_sessions/
-
-Debugging:
+**Debugging:**
 Check terminal logs — detailed output is provided.
 
-🔧 Configuration Summary
-File	Purpose
-app.py	Main Flask logic
-file_storage.py	Session handling
-templates/	HTML templates
-.env	API keys and secrets
+---
 
-Environment Variables
+## 🔧 Configuration Summary
 
-GEMINI_API_KEY → your Google Gemini key
+| File              | Purpose              |
+| ----------------- | -------------------- |
+| `app.py`          | Main Flask logic     |
+| `file_storage.py` | Session handling     |
+| `templates/`      | HTML templates       |
+| `.env`            | API keys and secrets |
 
-SECRET_KEY → Flask secret
+**Environment Variables:**
 
-📊 Technical Details
-Component	Version / Info
-Framework	Flask 2.3.3
-Python	3.12
-AI Model	Google Gemini 1.5 Flash
-Session	File-based
-Frontend	Bootstrap 5.3
-Image Handling	Pillow
+* `GEMINI_API_KEY` → your Google Gemini key
+* `SECRET_KEY` → Flask secret
 
-🚀 Deployment Ready
+---
+
+## 📊 Technical Details
+
+| Component          | Version / Info          |
+| ------------------ | ----------------------- |
+| **Framework**      | Flask 2.3.3             |
+| **Python**         | 3.12                    |
+| **AI Model**       | Google Gemini 1.5 Flash |
+| **Session**        | File-based              |
+| **Frontend**       | Bootstrap 5.3           |
+| **Image Handling** | Pillow                  |
+
+---
+
+## 🚀 Deployment Ready
+
 ✅ Error handling
 ✅ Secure sessions
 ✅ Logging
 ✅ Scalable
 ✅ Lightweight
 
-📞 Support
+---
+
+## 📞 Support
+
 If you encounter issues:
 
-Check terminal logs
+* Check terminal logs
+* Verify Gemini API key
+* Ensure dependencies installed
+* Make sure port 5000 is free
 
-Verify Gemini API key
+---
 
-Ensure dependencies installed
+## 🌟 Future Enhancements
 
-Make sure port 5000 is free
+* User authentication
+* Medical history tracking
+* Multi-model support
+* Advanced preprocessing
+* Exportable reports
 
-🌟 Future Enhancements
-User authentication
+---
 
-Medical history tracking
+## 📄 License
 
-Multi-model support
-
-Advanced preprocessing
-
-Exportable reports
-
-📄 License
-This project is for educational use.
+This project is for **educational use**.
 Ensure compliance with:
 
-Google Gemini API Terms of Service
+* Google Gemini API Terms of Service
+* Data privacy laws (HIPAA, GDPR, etc.)
+* Local medical guidelines
 
-Data privacy laws (HIPAA, GDPR, etc.)
+---
 
-Local medical guidelines
+## 🏥 Medical Disclaimer (Reiterated)
 
-🏥 Medical Disclaimer (Reiterated)
-⚠️ This app provides AI-generated insights for educational purposes only.
-It is not medical advice, not diagnostic, and should never replace professional healthcare consultation.
-The developers assume no liability for any misuse.
+> ⚠️ This app provides AI-generated insights for educational purposes only.
+> It is **not medical advice**, **not diagnostic**, and should never replace professional healthcare consultation.
+> The developers assume **no liability** for any misuse.
 
-💡 Quick Start Commands
-bash
-Copy code
+---
+
+## 💡 Quick Start Commands
+
+```bash
 # 1. Setup
 python -m venv venv
 source venv/bin/activate   # or venv\Scripts\activate on Windows
@@ -228,4 +266,11 @@ python app.py
 
 # 4. Visit
 # http://localhost:5000
-Built with ❤️ using Python 3.12, Flask, and Google Gemini AI for educational purposes.
+```
+
+---
+
+**Built with ❤️ using Python 3.12, Flask, and Google Gemini AI for educational purposes.**
+
+```
+
