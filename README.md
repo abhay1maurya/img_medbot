@@ -14,7 +14,7 @@ Built with **Flask** and **Python 3.12**.
 
 - **Medical Image Analysis:** Upload prescriptions, skin conditions, X-rays, or reports  
 - **Contextual Question Flow:** Sequential medical questions for better insights  
-- **AI-Powered Insights:** Google Gemini 1.5 Flash Vision model  
+- **AI-Powered Insights:** Google Gemini 2.0 Flash Vision model  
 - **Secure Session Management:** File-based storage  
 - **Responsive UI:** Bootstrap-based clean interface  
 - **Multi-format Support:** JPG, PNG, JPEG image formats  
